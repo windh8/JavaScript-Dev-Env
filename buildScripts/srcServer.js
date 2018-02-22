@@ -1,14 +1,23 @@
 /*This file will configure our webserver that
 will server up the files in our source directory*/
 
-var express = require("express");
+//Commented code below corresponds to CommonJS pattern code
+//from ES5 that we replaced with ES6 code that will be transpiled
+/*var express = require("express");
 var path = require("path");
-var open = require("open");
+var open = require("open");*/
+import express from "express";
+import path from "path";
+import open from "open";
 
-var port = 3000;
+//Commented code below corresponds to CommonJS pattern code
+//from ES5 that we replaced with ES6 code that will be transpiled
+/*var port = 3000;*/
+const port = 3000;
 
 //Creates an instance of express
-var app = express();
+/*var app = express();*/
+const app = express();
 
 /*Specifies that express should handle a specific (get Method) route from clients.
   Hence upon receiving a request/reference, to the root directory, the function below
