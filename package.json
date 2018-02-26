@@ -10,7 +10,8 @@
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "show-progress": "npm-run-all --parallel dev-webserv localtunnel",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./webpack.config.babel.js --output-path ./dist"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
     "url": "https://github.com/windh8/JavaScript-Dev-Env/issues"
   },
   "homepage": "https://github.com/windh8/JavaScript-Dev-Env#readme",
-  "dependencies": {},
+  "dependencies": {
+    "webpack-cli": "^2.0.9"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
