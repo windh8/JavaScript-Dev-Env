@@ -1,12 +1,3 @@
-/*Reason for this files existence:
-	The config file mentioned in the Pluralsight course
-	for building your own Javascript Dev Environment used
-	an earlier version of webpack, but that package has since
-	updated by several major versions, hence the config files
-	in the said lecture will run with errors
-
-	Must go through api of webpack 2 and make a new config file from scratch*/
-
 import path from "path";
 
 export default {
