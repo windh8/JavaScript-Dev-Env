@@ -10,6 +10,9 @@ import express from "express";
 import path from "path";
 import open from "open";
 
+import webpack from "webpack";
+import config from "../webpack.config.dev";
+
 //Commented code below corresponds to CommonJS pattern code
 //from ES5 that we replaced with ES6 code that will be transpiled
 /*var port = 3000;*/
@@ -18,6 +21,14 @@ const port = 3000;
 //Creates an instance of express
 /*var app = express();*/
 const app = express();
+
+//A reference to the webpack compiler
+const compiler = webpack(config);
+
+app.use(require("webpack-dev-middleware")(compiler, {
+	noInfo: true,
+	publicPath: config.output.publicPath
+}));
 
 /*Specifies that express should handle a specific (get Method) route from clients.
   Hence upon receiving a request/reference, to the root directory, the function below
