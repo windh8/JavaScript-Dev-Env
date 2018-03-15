@@ -10,4 +10,6 @@
 //does not yet recognize
 import chalk from "chalk";
 
+/*eslint-disable no-console*/
+
 console.log(chalk.cyan("Starting App in Dev Mode ..."));

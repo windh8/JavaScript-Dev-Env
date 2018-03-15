@@ -3,6 +3,8 @@ import path from "path";
 export default {
 	//entry point of our application
 	entry: "./src/index",
+
+	//Generates a sourcemap
 	devtool: "inline-source-map",
 	/*debug: true,*/  //This property was removed in Webpack 2
 

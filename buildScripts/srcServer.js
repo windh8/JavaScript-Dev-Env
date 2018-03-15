@@ -25,6 +25,8 @@ const app = express();
 //A reference to the webpack compiler
 const compiler = webpack(config);
 
+/*eslint-disable no-console*/
+
 app.use(require("webpack-dev-middleware")(compiler, {
 	noInfo: true,
 	publicPath: config.output.publicPath
