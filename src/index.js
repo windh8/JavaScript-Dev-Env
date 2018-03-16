@@ -1,4 +1,4 @@
-import "style.css";
+import "./style.css";
 
 //The numeral library is used to format numbers
 import numeral from "numeral";

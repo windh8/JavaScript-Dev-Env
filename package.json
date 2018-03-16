@@ -10,9 +10,9 @@
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "show-progress": "npm-run-all --parallel dev-webserv localtunnel",
-	"lint": "esw webpack.config.* src buildScripts --color",
-	"lint:watch": "npm run lint -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress ./buildScripts/testSetup.js \"./src/**/*.test.js\""
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,14 @@
   },
   "keywords": [],
   "author": "Heaten",
-  "license": "'MIT'",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/windh8/JavaScript-Dev-Env/issues"
   },
   "homepage": "https://github.com/windh8/JavaScript-Dev-Env#readme",
   "dependencies": {},
   "devDependencies": {
+    "ajv": "^6.2.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -50,7 +51,7 @@
     "numeral": "^2.0.6",
     "open": "0.0.5",
     "rimraf": "^2.6.2",
-    "style-loader": "^0.20.2",
+    "style-loader": "^0.20.3",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^2.0.6",
     "webpack-hot-middleware": "^2.21.0",
