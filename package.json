@@ -13,7 +13,7 @@
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress ./buildScripts/testSetup.js \"./src/**/*.test.js\"",
-	"test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,9 @@
     "url": "https://github.com/windh8/JavaScript-Dev-Env/issues"
   },
   "homepage": "https://github.com/windh8/JavaScript-Dev-Env#readme",
-  "dependencies": {},
+  "dependencies": {
+    "whatwg-fetch": "^2.0.3"
+  },
   "devDependencies": {
     "ajv": "^6.2.1",
     "babel-cli": "^6.26.0",

@@ -44,6 +44,20 @@ app.get("/dev-test", function(req, res){
 	res.send("<html><body>Test Page: Pass</body></html>");
 });
 
+//This new route (simple endpoint) will handle API requests, by returning 'User' data
+app.get("/users", function(req, res){
+	//In a read app (Production), this information would be queried from a Database (perhaps)
+	//served by a different machine on a different web server
+
+	//Infomation below is hard-coded
+	//Too much work to set up Database/Seperate API for a dev build of a web application
+	res.json([
+		{"id":1, "firstName":"Bob", "lastName":"Smith", "email":"bob@gmail.com"},
+		{"id":2, "firstName":"Tammy", "lastName":"Norton", "email":"tnorton@yahoo.com"},
+		{"id":3, "firstName":"Tina", "lastName":"Lee", "email":"lee.tina@hotmail.com"}
+	]);
+});
+
 /*Specifies to express, on which port to listen to (the one specified above)*/
 app.listen(port, function(err){
 	//If an error occurs, log it to the console, otherwise open the website using that address
