@@ -31,11 +31,3 @@ getUsers().then(result => {
 
 	global.document.getElementById("users").innerHTML = usersBody;
 });
-
-
-
-
-
-/*****************************************************************************/
-/*								Read Me First								*/
-//Continue at this video:	Building a JavaScript Development Environment

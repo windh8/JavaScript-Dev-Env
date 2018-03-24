@@ -1,3 +1,5 @@
+//This single file handles all API calls
+
 import "whatwg-fetch";
 //Importing fetch polyfill
 
