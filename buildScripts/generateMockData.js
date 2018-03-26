@@ -1,10 +1,12 @@
-/*This file will use the JSON-Schema-Faker to generated
+/*This file will use the JSON-Schema-Faker package to generate
  a mock data set and write it to a file*/
 
 import jsf from 'json-schema-faker';
 import {schema} from './mockDataSchema';
 import fs from 'fs';
 import chalk from 'chalk';
+
+/*eslint-disable no-console*/
 
 //Pass the schema to JSON-Schema-Faker to generate mock data
 //The mock data will be turned into a string of JSON, using JSON.stringify
