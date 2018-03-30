@@ -8,7 +8,7 @@ export default {
 	//Specifies how sourcemaps should be generated
 	//'inline-source-map': recommended for development
 	//'source-map': recommended for production (Slower to build, but provides the highest quality source-map experience)
-	devtool: "inline-source-map",
+	devtool: "source-map",
 	/*debug: true,*/  //This property was removed in Webpack 2
 
 	devServer: {
@@ -23,7 +23,7 @@ export default {
     //When creating a bundle for production, we should write
 	//physical files to a folder called 'dist' (short for distribution; for best practices)
 	output: {
-		path: path.resolve(__dirname, "/dist"),
+		path: path.resolve(__dirname, "dist"),
 		publicPath: "/",
 		filename: "bundle.js"
 	},
