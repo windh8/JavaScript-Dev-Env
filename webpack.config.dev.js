@@ -1,4 +1,5 @@
 import path from "path";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	//entry point of our application
@@ -25,7 +26,15 @@ export default {
 		publicPath: "/",
 		filename: "bundle.js"
 	},
-
+	plugins: [
+		//Create an HTML file that includes a refernce to the bundle that webpack will generate.
+		new HtmlWebpackPlugin({
+			//The 'index.html' file in the 'src' directory is our template
+			template: 'src/index.html',
+			//Setting 'inject: true' will inject any necessary script tags automatically
+			inject: true
+		})
+	],
 	//Enables webpack to process more than just JavaScript files
 	module:{
 		//In regards to migrating from webpack 1 to webpack 2
