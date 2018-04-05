@@ -2,6 +2,7 @@ import path from "path";
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpackMd5Hash from 'webpack-md5-hash';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
 	//entry point of our application; allows for relative paths
@@ -45,6 +46,10 @@ export default {
 
 	//
 	plugins: [
+		//Generate an external css file with a hash in the filename
+		//Css filename selected, on re-build, will change (its hash value) when css content is changed
+		new ExtractTextPlugin("[name].[contenthash].css"),
+
 		//Hash the files using md5 so that their names change when the content changes
 		new webpackMd5Hash(),
 
@@ -83,7 +88,7 @@ export default {
 		//new webpack.optimize.DedupePlugin(),
 
 		//Minify JS (uglify the code)
-		new webpack.optimize.UglifyJsPlugin
+		new webpack.optimize.UglifyJsPlugin()
 	],
 
 	//Enables webpack to process more than just JavaScript files
@@ -93,10 +98,14 @@ export default {
 		//'rules' tell webpack how to handle each file specified below
 		rules: [
 			{test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-			{test: /\.css$/, use: [
+			/*{test: /\.css$/, use: [
 				{loader: "style-loader"},
 				{loader: "css-loader", options: {modules: true}}
-			]}
+			]}*/
+			{test: /\.css$/, use: ExtractTextPlugin.extract({
+				fallback: "style-loader",
+				use: "css-loader"
+			})}
 		]
 	}
 }
