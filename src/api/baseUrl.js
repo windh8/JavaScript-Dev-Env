@@ -15,7 +15,7 @@
 //to the mock api 'http://localhost:3001/' otherwise with will point to the real
 //api hosted by express
 export default function getBaseUrl() {
-	return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : '/';
+	return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : 'https://frozen-garden-57655.herokuapp.com/';
 }
 
 //This function will get a parameter from the url!

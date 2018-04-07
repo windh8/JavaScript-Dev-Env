@@ -38,6 +38,9 @@ app.get("/", function(req, res){
 	res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
+//This block will be commented out due to setting up api on heroku. (Speration of api from ui)
+//We also modified baseUrl to point to the link given from heroku (for api), during production build
+/*
 //This new route (simple endpoint) will handle API requests, by returning 'User' data
 app.get("/users", function(req, res){
 	//In a read app (Production), this information would be queried from a Database (perhaps)
@@ -51,6 +54,7 @@ app.get("/users", function(req, res){
 		{"id":3, "firstName":"Tina", "lastName":"Lee", "email":"lee.tina@hotmail.com"}
 	]);
 });
+*/
 
 /*Specifies to express, on which port to listen to (the one specified above)*/
 app.listen(port, function(err){
